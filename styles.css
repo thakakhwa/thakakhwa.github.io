@@ -247,12 +247,8 @@ input:checked+.slider:before {
     font-size: 16px;
     margin-top: 40px;
     color: #bababa;
-    background-color: rgba(97, 32, 248, 0.1);
-    border: 1px solid rgba(97, 32, 248, 0.2);
-    box-shadow: 0 0 10px rgba(97, 32, 248, 0.1);
-    font-family: sans-serif;
-    color: #6120f8;
 }
+
 
 /*design one!*/
 /* #resumebutton {
