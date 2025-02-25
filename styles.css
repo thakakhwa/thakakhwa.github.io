@@ -452,7 +452,7 @@ input:checked+.slider:before {
 }
 
 #list1, #list2, #list3,#list4 {
-    padding: 15px;
+    padding: 5px;
     padding-bottom: 25px;
     border-radius: 10px;
     background-color: rgba(97, 32, 248, 0.1);
@@ -461,19 +461,16 @@ input:checked+.slider:before {
     font-family: sans-serif;
     color: #6120f8;
     font-size: 13px;
-    height: 80px;
     width: 160px;
 }
 #l1,#l2,#l3{
-    padding-bottom: 25px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgba(97, 32, 248, 0.1);
     border: 1px solid rgba(97, 32, 248, 0.2);
     box-shadow: 0 0 10px rgba(97, 32, 248, 0.1);
     font-family: sans-serif;
     color: #6120f8;
     font-size: 13px;
-    height: 120px;
     width: 185px;
 }
 
