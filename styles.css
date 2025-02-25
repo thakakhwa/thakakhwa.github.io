@@ -19,7 +19,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    animation: slideRight 1.5s ease-in-out;
+    
 
 }
 
@@ -72,6 +72,17 @@ body {
         opacity: 1;
     }
 }
+@keyframes slideRightt {
+    from {
+        transform: translate(-100%, -50%); /* Start off-screen, keeping vertical centering */
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, -50%); /* Moves right while staying vertically centered */
+        opacity: 1;
+    }
+}
+
 
 #bodydiv {
     width: 60%;
@@ -116,6 +127,7 @@ body {
     box-shadow: 0 0 25px rgba(97, 32, 248, 0.1);
     backdrop-filter: blur(10px);
     z-index: 1000;
+    animation: slideRightt 1s ease-in-out;
 }
 
 #header a:hover {
@@ -319,7 +331,7 @@ input:checked+.slider:before {
     flex-direction: column; 
     gap: 40px; 
     width: 600px; 
-    animation: fadeInBrightness 3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideRightt 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #list1, #list2, #list3,#list4 {
@@ -363,7 +375,7 @@ input:checked+.slider:before {
         justify-content: space-between;
         align-items: flex-start;
         width: 75%;
-        animation: slideRight 1.5s ease-in-out;
+        
     
     }
     #header {
@@ -385,6 +397,7 @@ input:checked+.slider:before {
         box-shadow: 0 0 25px rgba(97, 32, 248, 0.1);
         backdrop-filter: blur(10px);
         z-index: 1000;
+        animation: slideRightt 1s ease-in-out;
     }
     
     #header a:hover {
@@ -427,7 +440,7 @@ input:checked+.slider:before {
         margin-top: 180px;
         text-align: center;
         font-size: 25px;
-       
+
     }
     #bdiv{
         margin-left:80px;
@@ -448,7 +461,7 @@ input:checked+.slider:before {
     flex-direction: column; 
     gap: 40px; 
     width: 600px; 
-    animation: fadeInBrightness 3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideRightt 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #list1, #list2, #list3,#list4 {
