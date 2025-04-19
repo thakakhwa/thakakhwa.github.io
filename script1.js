@@ -54,90 +54,175 @@ function startDotAnimation(color) {
   }, 500);
 }
 
-toggleswitch.addEventListener("change", function () {
-  if (this.checked) {
-    document.body.style.backgroundColor = "white";
-    switchlabelcolor.style.color = "black";
-    bodydivtext.style.color = "#6120f8";
-    resumebutton.style.color="black"
-    bdiv.style.color="black"
-    bdiv.style.border="1px solid rgba(97, 32, 248, 0.6)"
-    header.style.backgroundColor="rgba(255, 255, 255, 0.6)"
-    header.style.border="1px solid rgba(115, 0, 255, 0.36)"
-    header.style.boxShadow="0 0 25px rgba(97, 32, 248, 0.6)"
-    resumebutton.style.boxShadow="0 0 25px rgba(97, 32, 248, 0.6)";
-    resumebutton.addEventListener("mouseover", function () {
-      resumebutton.style.boxShadow="0 0 25px rgb(97, 32, 248)";
-    });
-    resumebutton.addEventListener("mouseout", function () {
-      resumebutton.style.boxShadow="0 0 25px rgba(97, 32, 248, 0.6)";
-    });
+// Function to set active link color based on mode
+function setActiveLinkColor(color) {
+  const activeLink = document.querySelector("#header a.active");
+  if (activeLink) {
+    activeLink.style.color = color;
+  }
+}
 
-    startDotAnimation("#6120f8");
+// Function to add hover event listeners to links
+function addLinkHoverListeners() {
+  link.addEventListener("mouseover", function () {
+    if (!link.classList.contains("active")) {
+      link.style.color = currentMode === "light" ? "black" : "white";
+    }
+  });
+  link.addEventListener("mouseout", function () {
+    if (!link.classList.contains("active")) {
+      link.style.color = "#6120f8";
+    }
+  });
+  restofthelinks.forEach((link) => {
     link.addEventListener("mouseover", function () {
-      link.style.color = "black";
+      if (!link.classList.contains("active")) {
+        link.style.color = currentMode === "light" ? "black" : "white";
+      }
+    });
+    link.addEventListener("mouseout", function () {
+      if (!link.classList.contains("active")) {
+        link.style.color = "#6120f8";
+      }
+    });
+  });
+  sociallinks.forEach((link) => {
+    link.addEventListener("mouseover", function () {
+      link.style.color = currentMode === "light" ? "black" : "white";
     });
     link.addEventListener("mouseout", function () {
       link.style.color = "#6120f8";
     });
-    restofthelinks.forEach((link) => {
-      link.addEventListener("mouseover", function () {
-        link.style.color = "black";
-      });
-      link.addEventListener("mouseout", function () {
-        link.style.color = "#6120f8";
-      });
-    });
-    sociallinks.forEach((link) => {
-      link.addEventListener("mouseover", function () {
-        link.style.color = "black";
-      });
-      link.addEventListener("mouseout", function () {
-        link.style.color = "#6120f8";
-      });
-    });
-    
+  });
+}
+
+let currentMode = "dark";
+
+function applyLightMode() {
+  currentMode = "light";
+  document.body.classList.remove("dark-mode");
+  document.body.classList.add("light-mode");
+
+  document.body.style.backgroundColor = "white";
+  switchlabelcolor.style.color = "black";
+  bodydivtext.style.color = "#6120f8";
+  resumebutton.style.color = "black";
+  bdiv.style.color = "black";
+  bdiv.style.border = "1px solid rgba(97, 32, 248, 0.6)";
+  header.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
+  header.style.border = "1px solid rgba(115, 0, 255, 0.36)";
+  header.style.boxShadow = "0 0 25px rgba(97, 32, 248, 0.6)";
+  resumebutton.style.boxShadow = "0 0 25px rgba(97, 32, 248, 0.6)";
+  resumebutton.addEventListener("mouseover", function () {
+    resumebutton.style.boxShadow = "0 0 25px rgb(97, 32, 248)";
+  });
+  resumebutton.addEventListener("mouseout", function () {
+    resumebutton.style.boxShadow = "0 0 25px rgba(97, 32, 248, 0.6)";
+  });
+
+  startDotAnimation("#6120f8");
+}
+
+function applyDarkMode() {
+  currentMode = "dark";
+  document.body.classList.remove("light-mode");
+  document.body.classList.add("dark-mode");
+
+  startDotAnimation("white");
+  document.body.style.backgroundColor = "black";
+  bodydivtext.style.color = "white";
+  switchlabelcolor.style.color = "white";
+  resumebutton.style.color = "white";
+  bdiv.style.color = "#bababa";
+  bdiv.style.border = "1px solid rgba(97, 32, 248, 0.2)";
+  header.style.backgroundColor = "rgba(255, 255, 255, 0)";
+  header.style.border = "1px solid rgba(97, 32, 248, 0.2)";
+  header.style.boxShadow = "0 0 25px rgba(97, 32, 248, 0.1)";
+  resumebutton.style.boxShadow = "0px 0px 18px 4px rgba(97, 32, 248, 0.4)";
+}
+
+addLinkHoverListeners();
+
+// Function to apply dark mode styles
+function applyDarkMode() {
+  startDotAnimation("white");
+  document.body.style.backgroundColor = "black";
+  bodydivtext.style.color = "white";
+  switchlabelcolor.style.color = "white";
+  resumebutton.style.color="white"
+  bdiv.style.color="#bababa"
+  bdiv.style.border="1px solid rgba(97, 32, 248, 0.2)"
+  header.style.backgroundColor="rgba(255, 255, 255, 0)"
+  header.style.border="1px solid rgba(97, 32, 248, 0.2)"
+  header.style.boxShadow="0 0 25px rgba(97, 32, 248, 0.1)"
+  resumebutton.style.boxShadow="0px 0px 18px 4px rgba(97, 32, 248, 0.4)";
+
+  // Set active link color to white
+  const activeLink = document.querySelector("#header a.active");
+  if (activeLink) {
+    activeLink.style.color = "white";
   }
-  if (!this.checked) {
-    startDotAnimation("white");
-    document.body.style.backgroundColor = "black";
-    bodydivtext.style.color = "white";
-    switchlabelcolor.style.color = "white";
-    resumebutton.style.color="white"
-    bdiv.style.color="#bababa"
-    bdiv.style.border="1px solid rgba(97, 32, 248, 0.2)"
-    header.style.backgroundColor="rgba(255, 255, 255, 0)"
-    header.style.border="1px solid rgba(97, 32, 248, 0.2)"
-    header.style.boxShadow="0 0 25px rgba(97, 32, 248, 0.1)"
-    resumebutton.style.boxShadow="0px 0px 18px 4px rgba(97, 32, 248, 0.4)";
-    //for the first link(about me)
+
+  //for the first link(about me)
+  link.addEventListener("mouseover", function () {
+    if (!link.classList.contains("active")) {
+      link.style.color = "white";
+    }
+  });
+  link.addEventListener("mouseout", function () {
+    if (!link.classList.contains("active")) {
+      link.style.color = "#6120f8";
+    }
+  });
+
+  //links under the about me
+  restofthelinks.forEach((link) => {
+    link.addEventListener("mouseover", function () {
+      if (!link.classList.contains("active")) {
+        link.style.color = "white";
+      }
+    });
+    link.addEventListener("mouseout", function () {
+      if (!link.classList.contains("active")) {
+        link.style.color = "#6120f8";
+      }
+    });
+  });
+
+
+  //for the social media links
+  sociallinks.forEach((link) => {
     link.addEventListener("mouseover", function () {
       link.style.color = "white";
     });
-    link.addEventListener("mouseout", function () {
-      link.style.color = "#6120f8";
-    });
-
-    //links under the about me
-    restofthelinks.forEach((link) => {
-      link.addEventListener("mouseover", function () {
-        link.style.color = "white";
-      });
-      link.addEventListener("mouseout", function () {
-        link.style.color = "#6120f8";
-      });
-    });
-
-
-    //for the social media links
     sociallinks.forEach((link) => {
-      link.addEventListener("mouseover", function () {
-        link.style.color = "white";
-      });
       link.addEventListener("mouseout", function () {
         link.style.color = "#6120f8";
       });
     });
+  });
+}
+
+// On page load, check localStorage for saved mode and apply it
+document.addEventListener("DOMContentLoaded", function () {
+  const savedMode = localStorage.getItem("colorMode");
+  if (savedMode === "light") {
+    toggleswitch.checked = true;
+    applyLightMode();
+  } else {
+    toggleswitch.checked = false;
+    applyDarkMode();
+  }
+});
+
+// On toggle switch change, apply mode and save to localStorage
+toggleswitch.addEventListener("change", function () {
+  if (this.checked) {
+    applyLightMode();
+    localStorage.setItem("colorMode", "light");
+  } else {
+    applyDarkMode();
+    localStorage.setItem("colorMode", "dark");
   }
 });
 

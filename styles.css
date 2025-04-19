@@ -546,3 +546,13 @@ input:checked+.slider:before {
         opacity: 0;
     }
 }
+
+/* Dark mode active link color */
+.dark-mode #header a.active {
+    color: white !important;
+}
+
+/* Light mode active link color */
+.light-mode #header a.active {
+    color: black !important;
+}
