@@ -329,9 +329,13 @@ input:checked+.slider:before {
     transform: translateY(-50%);
     display: flex;
     flex-direction: column; 
-    gap: 40px; 
-    width: 600px; 
+    gap: 30px; 
+    width: calc(100vw - 140px);
+    max-width: 600px;
     animation: slideRightt 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 20px;
 }
 
 #list1, #list2, #list3,#list4 {
@@ -381,19 +385,19 @@ input:checked+.slider:before {
     #header {
         border-radius: 25px;
         animation: slideLeft 1.1s ease-in-out;
-        padding: 10px 0;
+        padding: 8px 0;
         background-color: rgba(255, 255, 255, 0);
-        width: 60px;
+        width: 50px;
         display: flex;
         position: fixed;
         left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 20px;
+        transform: translateY(0);
         border: 1px solid rgba(97, 32, 248, 0.2);
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 25px;
+        gap: 15px;
         box-shadow: 0 0 25px rgba(97, 32, 248, 0.1);
         backdrop-filter: blur(10px);
         z-index: 1000;
@@ -454,37 +458,44 @@ input:checked+.slider:before {
 
 #listwrapper {
     position: fixed;
-    left: 120px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 80px;
+    top: 10%;
+    transform: translateY(0);
     display: flex;
     flex-direction: column; 
-    gap: 40px; 
-    width: 600px; 
+    gap: 15px; 
+    width: calc(100vw - 100px);
+    max-width: 400px;
     animation: slideRightt 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 #list1, #list2, #list3,#list4 {
-    padding: 5px;
-    padding-bottom: 25px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 8px;
     background-color: rgba(97, 32, 248, 0.1);
     border: 1px solid rgba(97, 32, 248, 0.2);
     box-shadow: 0 0 10px rgba(97, 32, 248, 0.1);
     font-family: sans-serif;
     color: #6120f8;
-    font-size: 13px;
-    width: 160px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 #l1,#l2,#l3,#l4{
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     background-color: rgba(97, 32, 248, 0.1);
     border: 1px solid rgba(97, 32, 248, 0.2);
     box-shadow: 0 0 10px rgba(97, 32, 248, 0.1);
     font-family: sans-serif;
     color: #6120f8;
-    font-size: 13px;
-    width: 185px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.4;
 }
 
 #tel,#email{
@@ -503,6 +514,42 @@ input:checked+.slider:before {
     text-decoration: none;
 }
 
+}
+
+/* Extra small screens - phones */
+@media (max-width: 480px) {
+    #listwrapper {
+        left: 70px;
+        top: 5%;
+        width: calc(100vw - 85px);
+        gap: 12px;
+        height: 85vh;
+    }
+    
+    #header {
+        width: 45px;
+        left: 8px;
+        top: 15px;
+        gap: 12px;
+        padding: 6px 0;
+    }
+    
+    #header a {
+        font-size: 0.7rem;
+        padding: 3px 0;
+    }
+    
+    #l1,#l2,#l3,#l4{
+        padding: 10px;
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    
+    .project-button {
+        padding: 6px 12px;
+        font-size: 11px;
+        margin-top: 10px;
+    }
 }
 
 /*///////////////////////////////////////*/
